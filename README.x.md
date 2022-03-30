@@ -7,6 +7,7 @@ cat.|instr.|output
 ```scaffold.message(request-loan)```|```starport scaffold message request-loan amount fee collateral deadline```|***tx+message+codec+handler**<br>modified:```tx.proto```*
 ```implement.request```|*fillin:```keeper.RequestLoan```<br>```types.BankKeeper.SendCoinsFromAccountToModule```<br>```MsgRequestLoan.ValidateBasic```*
 ```scaffold.message(approve.loan)```|```starport scaffold message approve-loan id:uint```|***tx+message+codec+handler**<br>modified:```tx.proto```*
+```implement.approve```|*fillin:```keeper.ApproveLoan```<br>```errors.ErrWrongLoanState```<br>```types.BankKeeper.SendCoin```*
 
 
 
