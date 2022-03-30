@@ -42951,6 +42951,8 @@ definitions:
         type: string
       lender:
         type: string
+  deep2essence.loan.loan.MsgApproveLoanResponse:
+    type: object
   deep2essence.loan.loan.MsgRequestLoanResponse:
     type: object
   deep2essence.loan.loan.Params:
