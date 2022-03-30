@@ -42953,6 +42953,8 @@ definitions:
         type: string
   deep2essence.loan.loan.MsgApproveLoanResponse:
     type: object
+  deep2essence.loan.loan.MsgCancelLoanResponse:
+    type: object
   deep2essence.loan.loan.MsgLiquidateLoanResponse:
     type: object
   deep2essence.loan.loan.MsgRepayLoanResponse:

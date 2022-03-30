@@ -4,16 +4,18 @@ import { StdFee } from "@cosmjs/launchpad";
 import { SigningStargateClient } from "@cosmjs/stargate";
 import { Registry, OfflineSigner, EncodeObject, DirectSecp256k1HdWallet } from "@cosmjs/proto-signing";
 import { Api } from "./rest";
-import { MsgLiquidateLoan } from "./types/loan/tx";
+import { MsgCancelLoan } from "./types/loan/tx";
 import { MsgApproveLoan } from "./types/loan/tx";
 import { MsgRequestLoan } from "./types/loan/tx";
+import { MsgLiquidateLoan } from "./types/loan/tx";
 import { MsgRepayLoan } from "./types/loan/tx";
 
 
 const types = [
-  ["/deep2essence.loan.loan.MsgLiquidateLoan", MsgLiquidateLoan],
+  ["/deep2essence.loan.loan.MsgCancelLoan", MsgCancelLoan],
   ["/deep2essence.loan.loan.MsgApproveLoan", MsgApproveLoan],
   ["/deep2essence.loan.loan.MsgRequestLoan", MsgRequestLoan],
+  ["/deep2essence.loan.loan.MsgLiquidateLoan", MsgLiquidateLoan],
   ["/deep2essence.loan.loan.MsgRepayLoan", MsgRepayLoan],
   
 ];
@@ -47,9 +49,10 @@ const txClient = async (wallet: OfflineSigner, { addr: addr }: TxClientOptions =
 
   return {
     signAndBroadcast: (msgs: EncodeObject[], { fee, memo }: SignAndBroadcastOptions = {fee: defaultFee, memo: ""}) => client.signAndBroadcast(address, msgs, fee,memo),
-    msgLiquidateLoan: (data: MsgLiquidateLoan): EncodeObject => ({ typeUrl: "/deep2essence.loan.loan.MsgLiquidateLoan", value: MsgLiquidateLoan.fromPartial( data ) }),
+    msgCancelLoan: (data: MsgCancelLoan): EncodeObject => ({ typeUrl: "/deep2essence.loan.loan.MsgCancelLoan", value: MsgCancelLoan.fromPartial( data ) }),
     msgApproveLoan: (data: MsgApproveLoan): EncodeObject => ({ typeUrl: "/deep2essence.loan.loan.MsgApproveLoan", value: MsgApproveLoan.fromPartial( data ) }),
     msgRequestLoan: (data: MsgRequestLoan): EncodeObject => ({ typeUrl: "/deep2essence.loan.loan.MsgRequestLoan", value: MsgRequestLoan.fromPartial( data ) }),
+    msgLiquidateLoan: (data: MsgLiquidateLoan): EncodeObject => ({ typeUrl: "/deep2essence.loan.loan.MsgLiquidateLoan", value: MsgLiquidateLoan.fromPartial( data ) }),
     msgRepayLoan: (data: MsgRepayLoan): EncodeObject => ({ typeUrl: "/deep2essence.loan.loan.MsgRepayLoan", value: MsgRepayLoan.fromPartial( data ) }),
     
   };
