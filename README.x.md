@@ -9,6 +9,7 @@ cat.|instr.|output
 ```scaffold.message(approve.loan)```|```starport scaffold message approve-loan id:uint```|***tx+message+codec+handler**<br>modified:```tx.proto```*
 ```implement.approve```|*fillin:```keeper.ApproveLoan```<br>```errors.ErrWrongLoanState```<br>```types.BankKeeper.SendCoin```*
 ```scaffold.message(repay.loan)```|```starport scaffold message approve-loan id:uint```|***tx+message+codec+handler**<br>modified:```tx.proto```*
+```scaffold.message(liquidate.loan)```|```starport scaffold message liquidate-loan id:uint```|***tx+message+codec+handler**<br>modified:```tx.proto```*
 
 
 ### Test
